@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nmgb732sy-go-gitops
+  description: This is GitOps manifest for nmgb732sy-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: nmgb732sy-go
+    backstage.io/kubernetes-id: nmgb732sy-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: nmgb732sy-go-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nmgb732sy-go
